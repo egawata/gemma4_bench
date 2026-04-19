@@ -1,5 +1,6 @@
-Machine type: g4-standard-48 (48 vCPUs, 180 GB Memory)
-GPUs: 1 x NVIDIA RTX PRO 6000 (GPU 96GB)
+- Context length: 256k
+- Machine type: g4-standard-48 (48 vCPUs, 180 GB Memory)
+- GPUs: 1 x NVIDIA RTX PRO 6000 (GPU 96GB)
 
 ```
 $ python3 bench.py --show-response
