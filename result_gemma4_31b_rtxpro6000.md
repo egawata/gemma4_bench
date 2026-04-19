@@ -3,6 +3,99 @@
 - GPUs: 1 x NVIDIA RTX PRO 6000 (GPU 96GB)
 
 ```
+$ python3 bench.py --runs 3
+model: gemma4:31b-it-q8_0
+host:  http://localhost:11434
+input: diary.md (2799 chars)
+runs:  3
+think: both
+
+=== run 1/3 [think=on] ===
+total duration:       26.323570s
+load duration:        184.371699ms
+prompt eval count:    1283 token(s)
+prompt eval duration: 29.990346ms
+prompt eval rate:     42780.43 tokens/s
+eval count:           964 token(s)
+eval duration:        25.784397s
+eval rate:            37.39 tokens/s
+wall clock:           26.604s
+thinking chars:       2159
+response chars:       370
+
+=== run 1/3 [think=off] ===
+total duration:       5.525797s
+load duration:        187.707513ms
+prompt eval count:    1280 token(s)
+prompt eval duration: 365.030138ms
+prompt eval rate:     3506.56 tokens/s
+eval count:           185 token(s)
+eval duration:        4.906656s
+eval rate:            37.70 tokens/s
+wall clock:           5.753s
+response chars:       342
+
+=== run 2/3 [think=on] ===
+total duration:       24.864453s
+load duration:        187.693384ms
+prompt eval count:    1283 token(s)
+prompt eval duration: 372.854537ms
+prompt eval rate:     3441.02 tokens/s
+eval count:           898 token(s)
+eval duration:        23.998637s
+eval rate:            37.42 tokens/s
+wall clock:           25.116s
+thinking chars:       2088
+response chars:       324
+
+=== run 2/3 [think=off] ===
+total duration:       5.225971s
+load duration:        181.335376ms
+prompt eval count:    1280 token(s)
+prompt eval duration: 365.400258ms
+prompt eval rate:     3503.01 tokens/s
+eval count:           174 token(s)
+eval duration:        4.618781s
+eval rate:            37.67 tokens/s
+wall clock:           5.392s
+response chars:       328
+
+=== run 3/3 [think=on] ===
+total duration:       21.121227s
+load duration:        188.363283ms
+prompt eval count:    1283 token(s)
+prompt eval duration: 374.127516ms
+prompt eval rate:     3429.31 tokens/s
+eval count:           760 token(s)
+eval duration:        20.301439s
+eval rate:            37.44 tokens/s
+wall clock:           21.386s
+thinking chars:       1988
+response chars:       364
+
+=== run 3/3 [think=off] ===
+total duration:       5.606127s
+load duration:        183.786424ms
+prompt eval count:    1280 token(s)
+prompt eval duration: 365.715428ms
+prompt eval rate:     3499.99 tokens/s
+eval count:           188 token(s)
+eval duration:        4.988090s
+eval rate:            37.69 tokens/s
+wall clock:           5.774s
+response chars:       356
+
+=== summary ===
+run  mode             total(s)    eval    tok/s  think_c   resp_c
+  1  think=on            26.32     964    37.39     2159      370
+  1  think=off            5.53     185    37.70        0      342
+  2  think=on            24.86     898    37.42     2088      324
+  2  think=off            5.23     174    37.67        0      328
+  3  think=on            21.12     760    37.44     1988      364
+  3  think=off            5.61     188    37.69        0      356
+```
+
+```
 $ python3 bench.py --show-response
 model: gemma4:31b-it-q8_0
 host:  http://localhost:11434
